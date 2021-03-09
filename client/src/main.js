@@ -2,7 +2,7 @@ import * as PIXI from 'pixi.js'
 import Application from './Application';
 import TitleScreen from './screens/TitleScreen'
 
-var loader = new PIXI.loaders.Loader();
+var loader = new PIXI.Loader();
 loader.add('logo', 'images/logo.png')
 loader.add('background', 'images/background.jpg')
 loader.add('colyseus', 'images/colyseus.png')
@@ -10,7 +10,7 @@ loader.add('colyseus', 'images/colyseus.png')
 loader.add('clock-icon', 'images/clock-icon.png')
 loader.add('board', 'images/board.png')
 
-loader.on('complete', () => {
+loader.onComplete.add(() => {
   var loading = document.querySelector('.loading');
   document.body.removeChild(loading);
 
